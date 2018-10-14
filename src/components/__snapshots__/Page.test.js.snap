@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page should render the page 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+      },
+      Object {
+        "backgroundColor": undefined,
+        "paddingHorizontal": 24,
+        "paddingTop": 16,
+      },
+    ]
+  }
+>
+  <Text>
+    Hello
+  </Text>
+</View>
+`;
