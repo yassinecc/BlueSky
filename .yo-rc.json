@@ -2,6 +2,7 @@
   "generator-rn-toolbox": {
     "base": true,
     "lint": true,
-    "jest": true
+    "jest": true,
+    "travis": true
   }
 }
