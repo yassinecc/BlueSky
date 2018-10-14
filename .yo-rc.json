@@ -3,6 +3,7 @@
     "base": true,
     "lint": true,
     "jest": true,
-    "travis": true
+    "travis": true,
+    "fastlane": true
   }
 }
