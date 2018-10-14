@@ -17,9 +17,6 @@ export const navReducer = (state = initialNavState, action) => {
   return nextState || state;
 };
 
-export const navMiddleware = createReactNavigationReduxMiddleware(
-  'root',
-  state => state.nav
-);
+export const navMiddleware = createReactNavigationReduxMiddleware('root', state => state.nav);
 
 export const navListener = createReduxBoundAddListener('root');
