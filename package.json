@@ -9,6 +9,9 @@
     "test:unit": "jest"
   },
   "dependencies": {
+    "appcenter": "^1.8.1",
+    "appcenter-analytics": "^1.8.1",
+    "appcenter-crashes": "^1.8.1",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.3",
     "react-navigation": "^2.18.0",
@@ -32,6 +35,11 @@
     },
     "moduleNameMapper": {
       "^[./a-zA-Z0-9$_-]+\\.(jpg|png|gif|eot|svg|ttf|woff|woff2|mp4|webm)$": "<rootDir>/jest/FileStub.js"
-    }
+    },
+    "setupFiles": [
+      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
+      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
+      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js"
+    ]
   }
 }
