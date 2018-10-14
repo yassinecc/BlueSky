@@ -1,7 +1,6 @@
 // @flow
 
 import { createStore } from 'redux';
-import enhancer from 'BlueSky/src/modules/rootEnhancer';
-import reducers from 'BlueSky/src/modules/rootReducer';
+import { appReducer } from './App';
 
-export default () => createStore(reducers, enhancer);
+export default () => createStore(appReducer);
