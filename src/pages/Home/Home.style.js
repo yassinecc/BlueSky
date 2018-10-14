@@ -1,6 +1,6 @@
 // @flow
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import theme from 'BlueSky/src/theme';
 
 export default StyleSheet.create({
