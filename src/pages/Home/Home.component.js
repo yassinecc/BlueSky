@@ -1,30 +1,37 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Platform, Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 import { Page } from 'BlueSky/src/components';
 
-import styles from './Home.style';
+import theme from 'BlueSky/src/theme';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\nShake or press menu button for dev menu',
-});
-
-export default class Home extends Component {
+export default class Home extends Component<StateType> {
   static navigationOptions = {
     title: 'Home',
   };
+  constructor() {
+    super();
+    const initialTime = Date.now();
+    const startTime = 0;
+    this.state = { initialTime, timeLeft: startTime };
+    setInterval(this.updateTimer, 1000);
+  }
   props: PropsType;
+  state: StateType;
+
+  updateTimer = () => {
+    const timeDifferenceInMilliseconds = Date.now() - this.state.initialTime;
+    const timeDifferenceInSeconds = Math.floor(timeDifferenceInMilliseconds / 1000);
+    this.setState({ timeLeft: timeDifferenceInSeconds });
+  };
 
   render() {
     return (
       <Page>
         <View style={styles.container}>
-          <Text style={styles.welcome}>Welcome to React Native!</Text>
-          <Text style={styles.instructions}>This is the Home page</Text>
-          <Text style={styles.instructions}>{instructions}</Text>
+          <Text style={styles.welcome}>{this.state.timeLeft}</Text>
         </View>
       </Page>
     );
@@ -34,3 +41,20 @@ export default class Home extends Component {
 type PropsType = {
   navigation: any,
 };
+
+type StateType = {
+  initialTime: Date,
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  welcome: {
+    ...theme.fonts.header,
+    textAlign: 'center',
+    margin: theme.grid.x1,
+  },
+});
