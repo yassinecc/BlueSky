@@ -12,9 +12,9 @@
     "appcenter": "^1.8.1",
     "appcenter-analytics": "^1.8.1",
     "appcenter-crashes": "^1.8.1",
-    "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.3",
-    "react-navigation": "^2.18.0",
+    "react": "16.6.3",
+    "react-native": "0.57.7",
+    "react-navigation": "^3.0.2",
     "react-redux": "^5.0.7",
     "redux": "^4.0.1"
   },
@@ -23,9 +23,9 @@
     "eslint": "^5.7.0",
     "eslint-config-universe-error": "^1.0.7",
     "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.48.1",
+    "metro-react-native-babel-preset": "0.50.0",
     "prettier": "^1.14.3",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "react-test-renderer": "16.6.3"
   },
   "jest": {
     "preset": "react-native",
